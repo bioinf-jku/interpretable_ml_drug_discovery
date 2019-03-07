@@ -197,9 +197,13 @@ def reduce_act(act, mols, nr_atoms=100):
 
 def get_substruct(mol, atom_idx, radius=1):
     # this function creates submolecules
-    env = Chem.FindAtomEnvironmentOfRadiusN(mol, radius, atom_idx)
-    amap={}
-    submol=Chem.PathToSubmol(mol,env,atomMap=amap)
+    for r in range(radius)[::-1]:
+        env = Chem.FindAtomEnvironmentOfRadiusN(mol, r, atom_idx)
+        amap={}
+        submol=Chem.PathToSubmol(mol,env,atomMap=amap)
+        smi = Chem.MolToSmiles(submol)
+        if smi!="":
+            break
     return submol
 
 
