@@ -1,4 +1,4 @@
-# Interpretable Deep Learning in Drug Discover
+# Interpretable Deep Learning in Drug Discovery
 
 Without any means of interpretation, neural networks that predict molecular properties and bioactivities are merely black boxes.
 We will unravel these black boxes and will demonstrate approaches to understand the learned representations which are hidden 
